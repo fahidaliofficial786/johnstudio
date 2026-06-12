@@ -1,0 +1,6 @@
+{
+  "name": "Resolution Promotions",
+  "description": "Premium Jersey Shore-based digital marketing, podcast production, and AI strategy agency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
