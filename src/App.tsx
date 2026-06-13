@@ -14,17 +14,19 @@ import {
 } from "lucide-react";
 
 import { Video as VideoType, Short as ShortType } from "./types";
-import { SERVICES, TESTIMONIALS, PARTNERS, BLOG_POSTS, STUDIO_PHOTOS } from "./data";
+import { SERVICES, TESTIMONIALS, PARTNERS, BLOG_POSTS, STUDIO_PHOTOS, YOUTUBE_VIDEOS, YOUTUBE_SHORTS } from "./data";
 
 export default function App() {
   // Mobile navigation state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Active video states
-  const [videosList, setVideosList] = useState<VideoType[]>([]);
-  const [shortsList, setShortsList] = useState<ShortType[]>([]);
+  const [videosList, setVideosList] = useState<VideoType[]>(YOUTUBE_VIDEOS);
+  const [shortsList, setShortsList] = useState<ShortType[]>(YOUTUBE_SHORTS);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [activePodcastVideo, setActivePodcastVideo] = useState<VideoType | null>(null);
+  const [activePodcastVideo, setActivePodcastVideo] = useState<VideoType | null>(
+    YOUTUBE_VIDEOS.find((v: VideoType) => v.id === "v2_podcast_john") || YOUTUBE_VIDEOS[0] || null
+  );
   
   // Interactive Modal States
   const [activePlayEmbedId, setActivePlayEmbedId] = useState<string | null>(null);
